@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>TICKETS</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="header__menu">
+				<div class="header__menu__wrapper">
+					<div class="header__menu__inner">
+						<ul class="header__menu__list">
+							<li class="header__menu__list__item header__menu__list__item--burger">
+								<div class="burger">
+									<div class="burger__line"></div>
+									<div class="burger__line"></div>
+									<div class="burger__line"></div>
+								</div>
+							</li>
+							<li class="header__menu__list__item header__menu__list__item--logo">
+								<a href="/" class="header__menu__list__item__link">
+									<img class="header__menu__list__item__img header__menu__list__item__img--logo header__menu__list__item__img--white" src="img/logo_w.svg" alt="logo">
+									<img class="header__menu__list__item__img header__menu__list__item__img--logo header__menu__list__item__img--black" src="img/logo_b.svg" alt="logo">
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header__menu__inner">
+						<ul class="header__menu__list">
+							<li class="header__menu__list__item header__menu__list__item--menu_ext">
+								<a class="header__menu_ext__link" href="#">Театры</a>
+								<a class="header__menu_ext__link" href="#">Концерты</a>
+								<a class="header__menu_ext__link" href="#">Экскурсии</a>
+								<a class="header__menu_ext__link header__menu_ext__link--dots" href="#">
+									<img class="header__menu_ext__link__img header__menu_ext__link__img--white" src="img/three-dots_w.svg" alt="dots">
+									<img class="header__menu_ext__link__img header__menu_ext__link__img--black" src="img/three-dots_b.svg" alt="dots">
+								</a>
+								<div class="header__submenu_ext">
+									<a class="header__submenu_ext__link" href="#">Детям</a>
+									<a class="header__submenu_ext__link" href="#">Кино</a>
+									<a class="header__submenu_ext__link" href="#">Семинары</a>
+									<a class="header__submenu_ext__link" href="#">Клубы</a>
+									<a class="header__submenu_ext__link" href="#">Фестивали</a>
+									<a class="header__submenu_ext__link" href="#">Другие</a>
+									<a class="header__submenu_ext__link" href="#">Stand-up</a>
+									<a class="header__submenu_ext__link" href="#">Дельфинарий</a>
+									<a class="header__submenu_ext__link" href="#">Цирк</a>
+									<a class="header__submenu_ext__link" href="#">Спорт</a>
+									<a class="header__submenu_ext__link" href="#">Бизнес</a>
+									<a class="header__submenu_ext__link" href="#">Футбол</a>
+									<a class="header__submenu_ext__link" href="#">Квесты</a>
+									<a class="header__submenu_ext__link" href="#">Выставки</a>
+								</div>
+							</li>
+							<li class="header__menu__list__item header__menu__list__item--search">
+								<img class="header__menu__list__item__img header__menu__list__item__img--search" src="img/search_menu.svg" alt="search-img">
+								<span class="header__menu__list__item__text--search">Ищи концерт, исполнителя, фестиваль...</span>
+							</li>
+						</ul>
+					</div>
+					<div class="header__menu__inner">
+						<ul class="header__menu__list">
+							<li class="header__menu__list__item header__menu__list__item--calend">
+								<img class="header__menu__list__item__img header__menu__list__item__img--calend header__menu__list__item__img--white" src="img/calendar_w.svg" alt="calend-img">
+								<img class="header__menu__list__item__img header__menu__list__item__img--calend header__menu__list__item__img--black" src="img/calendar_b.svg" alt="calend-img">
+								<div class="header__calendar__menu">
+									<a class="header__calendar__menu__link header__calendar__menu__link--checkable" href="#">Когда угодно</a>
+									<a class="header__calendar__menu__link header__calendar__menu__link--checkable" href="#">Сегодня</a>
+									<a class="header__calendar__menu__link header__calendar__menu__link--checkable" href="#">Завтра</a>
+									<a class="header__calendar__menu__link header__calendar__menu__link--checkable" href="#">На выходные</a>
+									<a class="header__calendar__menu__link" href="#">Выбрать дату
+										<img src="img/arrow_r.svg" alt="arrow-right">
+									</a>
+								</div>
+							</li>
+							<li class="header__menu__list__item header__menu__list__item--loc">
+								<span class="header__menu__list__item__city_name--loc">Ивано-Франковск</span>
+								<img class="header__menu__list__item__img header__menu__list__item__img--loc header__menu__list__item__img--white" src="img/loc_w.svg" alt="loc-img">
+								<img class="header__menu__list__item__img header__menu__list__item__img--loc header__menu__list__item__img--black" src="img/loc_b.svg" alt="loc-img">
+								<div class="header__location__menu">
+									<input class="header__location__menu__inp" type="text" name="header-inp-loc">
+									<div class="header__location__menu__inner"></div>
+								</div>
+							</li>
+							<li class="header__menu__list__item header__menu__list__item--lang">
+								<div class="header__lang__menu header__lang__menu--cur">
+									<span class="header__menu__list__item__lang--cur">Русский</span>
+									<img class="header__menu__list__item__img header__menu__list__item__img--lang header__menu__list__item__img--white" src="img/arrow_d_w.svg" alt="lang-img">
+									<img class="header__menu__list__item__img header__menu__list__item__img--lang header__menu__list__item__img--black" src="img/arrow_d_b.svg" alt="lang-img">
+								</div>
+								<div class="header__lang__menu header__lang__menu--cho">
+									<a class="header__lang__menu__link header__lang__menu__link--checkable" href="#">Русский</a>
+									<a class="header__lang__menu__link header__lang__menu__link--checkable" href="#">Українська</a>
+									<a class="header__lang__menu__link header__lang__menu__link--checkable" href="#">English</a>
+								</div>
+							</li>
+							<li class="header__menu__list__item header__menu__list__item--ent">
+								<a href="#">Войти</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header__burger_menu">
+				<div class="burger_menu">
+					<div class="burger_menu__wrapper">
+						<div class="burger_menu__inner">
+							<div class="burger_menu__inner__lang">
+								<ul class="burger_menu__inner__lang__list">
+									<li class="burger_menu__inner__lang__list__item">
+										<p class="burger_menu__inner__lang__list__item__text">Русский</p>
+										<img class="burger_menu__inner__lang__list__item__img" src="img/arrow_d_b.svg" alt="arrow-right">
+									</li>
+									<li class="burger_menu__inner__lang__list__item">
+										<a class="burger_menu__inner__lang__list__item__link" href="#">Русский</a>
+									</li>
+									<li class="burger_menu__inner__lang__list__item">
+										<a class="burger_menu__inner__lang__list__item__link" href="#">Українська</a>
+									</li>
+									<li class="burger_menu__inner__lang__list__item">
+										<a class="burger_menu__inner__lang__list__item__link" href="#">English</a>
+									</li>
+								</ul>
+							</div>
+							<div class="burger_menu__inner__close_but">
+								<div class="burger__line burger__line--first"></div>
+								<div class="burger__line burger__line--second"></div>
+							</div>
+						</div>
+						<div class="burger_menu__inner">
+							<ul class="burger_menu__inner__list">
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Театры</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Концерты</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Экскурсии</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Детям</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Семинары</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link" href="#">Кино</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--categories" href="#">Все категории...</a>
+								</li>
+							</ul>
+						</div>
+						<div class="burger_menu__inner">
+							<ul class="burger_menu__inner__list">
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--cat" href="#">О компании</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--cat" href="#">Сотрудничество</a>
+								</li>
+								<li class="burger_menu__inner__list__item">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--cat" href="#">Контент</a>
+								</li>
+							</ul>
+						</div>
+						<div class="burger_menu__inner">
+							<a class="burger_menu__inner__link" href="#">
+								Войти
+							</a>
+						</div>
+						<div class="burger_menu__inner">
+							<p class="burger_menu__inner__text">Пн-Пт: 10:00 - 19:00</p>
+							<ul class="burger_menu__inner__list">
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--contacts">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--contacts" href="tel:+380503093092​​​​​​​​​​">+38 (050) 309-30-92​​​​​​​​​​</a>
+								</li>
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--contacts">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--contacts" href="mailto:hello@tickfind.com">hello@tickfind.com</a>
+								</li>
+							</ul>
+							<ul class="burger_menu__inner__list burger_menu__inner__list-soc_items">
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--soc_items">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--soc_items burger_menu__inner__list__item__link--facebook" href="#"></a>
+								</li>
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--soc_items">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--soc_items burger_menu__inner__list__item__link--twitter" href="#"></a>
+								</li>
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--soc_items">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--soc_items burger_menu__inner__list__item__link--instagram" href="#"></a>
+								</li>
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--soc_items">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--soc_items burger_menu__inner__list__item__link--linkedin" href="#"></a>
+								</li>
+								<li class="burger_menu__inner__list__item burger_menu__inner__list__item--soc_items">
+									<a class="burger_menu__inner__list__item__link burger_menu__inner__list__item__link--soc_items burger_menu__inner__list__item__link--telegram" href="#"></a>
+								</li>
+							</ul>
+						</div>
+						<div class="burger_menu__inner">
+							<img src="">
+							<a class="burger_menu__inner__link" href="#">
+								<span class="burger_menu__inner__text burger_menu__inner__text--bus">Билеты на автобус</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__info">
+				<div class="header__info__wrapper">
+					<div class="header__info__inner header__info__inner--title_box">
+						<div class="header__info__inner__title">
+							<div class="header__title">
+								<h2 class="header__title__text">Все билеты в одном городе.</h2>
+								<h2 class="header__title__text">Выбирай свои.</h2>
+							</div>
+						</div>
+						<div class="header__info__inner__search">
+							<div class="header__info__search__wrapper">
+								<div class="header__search_box__input">
+									<div class="header__search_box__input__inner">
+										<img class="header__search_box__input__inner__img" src="img/search_input.svg" alt="img-search">
+										<span class="header__search_box__input__inner__text">Ищи концерт, исполнителя...</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header__info__inner header__info__inner--tags">
+						<div class="header__tags">
+							<div class="header__tags__wrapper">
+								<ul class="header__tags__wrapper__list">
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Концерты</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Театры</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Фестивали</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Детям</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Новый год</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Экскурсии</a>
+									</li>
+									<li class="header__tags__wrapper__list__item">
+										<a class="header__tags__wrapper__list__item__link" href="#">Спорт</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
