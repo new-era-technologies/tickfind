@@ -372,7 +372,8 @@ header {
   display: inline-block;
   cursor: pointer;
 }
-.burger__line {
+.burger__line,
+.burger__line__close {
   width: 20px;
   height: 2px;
   background-color: white;
