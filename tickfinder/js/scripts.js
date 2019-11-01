@@ -228,9 +228,94 @@ $(document).ready(function(){
 			/*768*/
 			$('.header__menu__list__item__text--search_lo').css('display', 'none');
 			/*1250*/
-			$('.header__menu__list__item__city_name--loc').css('display', 'block');
+			if ($(window).innerWidth() > 1249) {
+				$('.header__menu__list__item__city_name--loc').css('display', 'block');
+			}
 
 		}
 	}
+
+	/*scroll to search menu*/
+	$('.header__search_box__input__inner__text').click(function() {
+		$('html,body').animate({
+			scrollTop: $('.header__info__inner--title_box').offset().top
+		}, 200);
+		$('.header__search_box__popup').animate({
+			'opacity': 'toggle'
+		}, 200);
+	});
+	$('.header__menu__list__item--search').click(function() {
+		$('html,body').animate({
+			scrollTop: $('.header__info__inner--title_box').offset().top
+		}, 200);
+		$('.header__search_box__popup').animate({
+			'opacity': 'toggle'
+		}, 200);
+		$('.header__search_box__input__inner__text').focus();
+	});
+	/*show search-menu*/
+	$('.header__search_box__input__inner__text').keyup(function() {
+
+		fetch('https://tickfind.com/attraction.json')
+		.then(function(res) { 
+			return res.json(); 
+		})
+		.then(function(dataConcerts) {
+			var adr = [];
+			var arrData = [];
+			$('.header__search_box__popup__wrapper__info_box__links_box').children().remove();
+			$('.header__search_box__popup__wrapper__info_box__concerts_box').children().remove();
+			$('.header__search_box__popup__wrapper__info_box__artists__inner').children().remove();
+			for(var i = 0; i < dataConcerts.length; i++) {
+				if (((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) {
+					arrData.push(dataConcerts[i]);
+					
+					/* artists */
+					if ((dataConcerts[i].apr_page_name != '')) {
+						adr.push(dataConcerts[i].apr_page_name)
+					}
+				} else {
+					$('.header__search_box__popup__wrapper__info_box__title--hidden').css('display', 'none');
+					$('.header__search_box__popup__wrapper__info_box__load_more').css('display', 'none');
+				}
+			}
+			for (var b = 0; b < 3; b++) {
+				/* events */
+				$(".header__search_box__popup__wrapper__info_box__links_box").append('<a class="header__search_box__popup__wrapper__info_box__links_box__link" href="' + 'https://tickfind.com/event/' + arrData[b].event_alias + '.htm' + '" target="_blank">' + arrData[b].event_name + '</a>');
+				/*photo info*/
+				$('.header__search_box__popup__wrapper__info_box__concerts_box').append(
+					'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner">' +
+					'<a href="' + 'https://tickfind.com/event/' + arrData[b].event_alias + '.htm' + '" target="_blank">' +
+					'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__img_box">' +
+					'<img class="header__search_box__popup__wrapper__info_box__concerts_box__inner__img_box__img" src="' + 'https://tickfind.com/gallery/' + arrData[b].gallery_name + '/image_' + arrData[b].gallery_id + '_168_96.jpg' + '">' +
+					'</div>' +
+					'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info">' +
+					'<p class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--date">' + arrData[b].city_name + ' • ' + arrData[b].event_at_str + '</p>' +
+					'<p class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--name">' + arrData[b].apr_page_name + '</p>' +
+					'<p class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--place">' + arrData[b].building_name + '</p>' +
+					'</a>' +
+					'</div>' +
+					'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__price">' +
+					'<a href="' + 'https://tickfind.com/hall/' + arrData[b].event_alias + '.htm' + '" target="_blank">' +
+					'<p>' + 'от ' + arrData[b].price_min + ' ₴' + '</p>' +
+					'</a>' +
+					'</div>' +
+					'</div>'
+					);
+
+				$('.header__search_box__popup__wrapper__info_box__title--hidden').css('display', 'block');
+				/*show link all results*/
+				$('.header__search_box__popup__wrapper__info_box__load_more').css('display', 'table');
+			}
+			/*artists*/
+			var arrArtNam = adr.filter(function(elem, index, self) {
+				return index === self.indexOf(elem);
+			});
+			for (var k = 0; k < arrArtNam.length; k++) {
+				$('.header__search_box__popup__wrapper__info_box__artists__inner').append('<a class="header__search_box__popup__wrapper__info_box__artists__inner__link" >' + arrArtNam[k] + '</a>');
+			}
+		});
+	});
+
 
 });

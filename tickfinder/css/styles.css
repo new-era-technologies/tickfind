@@ -188,6 +188,7 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .header__menu__list__item__img--search {
   display: none;
@@ -391,8 +392,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  overflow: -moz-scrollbars-vertical; 
-  overflow-y: scroll;
+  overflow: auto;
 }
 .burger_menu__wrapper {
 
@@ -605,6 +605,9 @@ header {
   color: white;
 }
 /*info-search*/
+.header__info__inner__search {
+  position: relative;
+}
 .header__info__search__wrapper {
   margin-top: 30px;
   padding: 0 40px;
@@ -614,6 +617,7 @@ header {
   border: 7px solid white;
   border-radius: 8px;
   background-color: white;
+  box-shadow: 0px 10px 20px #b7b7b7;
 }
 .header__search_box__input__inner {
   height: 100%;
@@ -623,19 +627,32 @@ header {
   border: 1px solid #b7b7b7;
   border-radius: 4px;
   background-color: white;
-  cursor: pointer;
 }
 .header__search_box__input__inner__text {
-  padding-left: 15px;
+  width: 100%;
+  padding-left: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #36373D;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+.header__search_box__input__inner__text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b7b7b7;
+  opacity: 1; /* Firefox */
+}
+
+.header__search_box__input__inner__text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #b7b7b7;
+}
+
+.header__search_box__input__inner__text::-ms-input-placeholder { /* Microsoft Edge */
+  color: #b7b7b7;
 }
 .header__search_box__input__inner__img {
   width: 16px;
-  height: 16px;
-}
-.header__search_box__input__inner__text {
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  color: #b7b7b7;
+  height: 17px;
 }
 /*info-tags*/
 .header__tags {
@@ -679,7 +696,122 @@ header {
   text-decoration: none;
   color: white;
 }
+/*search-box popup*/
+.header__search_box__popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  z-index: 999;
+}
+.header__search_box__popup__wrapper {
+  width: 240px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0px 5px 10px #b7b7b7;
+  border: 1px solid #EFF2F4;
+  border-radius: 8px;
+}
+.header__search_box__popup__wrapper__info_box__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 20px;
+  color: #B7B7B7;
+}
+.header__search_box__popup__wrapper__info_box__title--hidden {
+  display: none;
+}
+.header__search_box__popup__wrapper__info_box__links_box,
+.header__search_box__popup__wrapper__info_box__concerts_box {
+}
+.header__search_box__popup__wrapper__info_box__links_box__link,
+.header__search_box__popup__wrapper__info_box__artists__inner__link,
+.header__search_box__popup__wrapper__info_box__load_more {
+  padding: 0 0 20px 20px;
+  display: table;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #36373D;
+  text-decoration: none;
+}
+.header__search_box__popup__wrapper__info_box__artists__inner__link {
+  padding: 0 20px 20px 20px;
+}
+.header__search_box__popup__wrapper__info_box__links_box__link {
+  margin: 5px 20px 15px 20px;
+  padding: 10px;
+  display: block;
+  background: #E5F9F7;
+  border-radius: 4px;
+  color: #07C4AE;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box {
 
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner {
+  width: 100%;
+  margin: 15px auto 45px auto;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__img_box {
+  margin: 0 15px;
+  display: flex;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__img_box__img {
+  margin: 0 auto;
+  border-radius: 3px;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+  margin: 0 15px;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info > a {
+  text-decoration: none;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text {
+  margin: 5px 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--date {
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #07C4AE;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--name {
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  color: #36373D;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--place {
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #B7B7B7;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
+  width: 115px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #07C4AE;
+  box-shadow: 0px 4px 8px #07C4AE52;
+  border-radius: 4px;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price > a,
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price > p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+}
+.header__search_box__popup__wrapper__info_box__load_more {
+  margin: 20px auto;
+  padding: 0;
+  color: #07C4AE;
+  cursor: pointer;
+  display: none;
+}
 
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -695,7 +827,11 @@ header {
   .header__info__inner--title_box {
     width: 480px;
   }
-} 
+  .header__search_box__popup__wrapper {
+    width: 400px;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .container {
     width: 768px;
@@ -712,6 +848,9 @@ header {
   .header__info__inner--title_box {
     width: 525px;
   }
+  .header__search_box__popup__wrapper {
+    width: 445px;
+  } 
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1249px) {
@@ -743,10 +882,28 @@ header {
     display: block;
   }
   .header__info__inner--title_box {
-    width: 625px;
+    width: 730px;
   }
   .header__title__text {
     font-size: 40px;
+  }
+  .header__search_box__popup__wrapper {
+    width: 650px;
+  } 
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner {
+    display: flex;
+    align-items: center;
+  }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 50%;
+    margin: 0 15px 0 0;
+  }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text {
+    text-align: left;
+  }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
+    margin-right: 15px;
+    font-size: 15px;
   }
 }
 
@@ -782,9 +939,27 @@ header {
   display: block;
 }
 .header__info__inner--title_box {
-  width: 625px;
+  width: 730px;
 }
 .header__title__text {
   font-size: 40px;
+}
+.header__search_box__popup__wrapper {
+  width: 650px;
+} 
+.header__search_box__popup__wrapper__info_box__concerts_box__inner {
+  display: flex;
+  align-items: center;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+  width: 50%;
+  margin: 0 15px 0 0;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text {
+  text-align: left;
+}
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
+  margin-right: 15px;
+  font-size: 15px;
 }
 }
