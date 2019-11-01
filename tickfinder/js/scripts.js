@@ -48,7 +48,7 @@ $(document).ready(function(){
 		$('.header__calendar__menu').css('display', 'none');
 		$('.header__location__menu').css('display', 'none');
 		$('.header__lang__menu--cho').css('display', 'none');
-		$('.header__menu__list__item__img--lang').toggleClass('header__menu__list__item__img__lang--rotated');
+		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
 	/* show calendar by click */
@@ -57,7 +57,7 @@ $(document).ready(function(){
 		$('.header__submenu_ext').css('display', 'none');
 		$('.header__location__menu').css('display', 'none');
 		$('.header__lang__menu--cho').css('display', 'none');
-		$('.header__menu__list__item__img--lang').toggleClass('header__menu__list__item__img__lang--rotated');
+		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
 	/* show cities by click */
@@ -66,10 +66,8 @@ $(document).ready(function(){
 		$('.header__location__menu__inp').focus();
 		$('.header__submenu_ext').css('display', 'none');
 		$('.header__calendar__menu').css('display', 'none');
-		if ($('.header__lang__menu--cho').css('display', 'block')) {
-			$('.header__menu__list__item__img--lang').toggleClass('header__menu__list__item__img__lang--rotated');
-			$('.header__lang__menu--cho').css('display', 'none');
-		}
+		$('.header__lang__menu--cho').css('display', 'none');
+		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
 	/* show language by click */
