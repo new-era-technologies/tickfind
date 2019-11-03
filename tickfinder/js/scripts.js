@@ -38,7 +38,7 @@ $(document).ready(function(){
 	/*show add info in burger menu*/
 	$('.burger_menu__inner__list__item__link--categories').click(function(e) {
 		e.preventDefault();
-		$('.burger_menu__inner:nth-child(3)').slideToggle(200);
+		$('.burger_menu__inner__list__item--hid').slideToggle(200);
 	});
 
 	/*show menu ext*/

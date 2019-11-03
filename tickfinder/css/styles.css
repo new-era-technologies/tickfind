@@ -174,8 +174,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  color: #36373D;
+  color: #b7b7b7;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -223,8 +222,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: bold;
-  color: #36373D;
+  color: #b7b7b7;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -270,7 +268,6 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 700;
   color: #36373D;
   padding: 7px 0 7px 15px;
   transition: all 0.2s;
@@ -290,8 +287,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  color: #36373D;
+  color: #b7b7b7;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -343,8 +339,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  color: #36373D;
+  color: #b7b7b7;
   padding: 7px 0 7px 5px;
   transition: all 0.2s;
   text-decoration: none;
@@ -407,9 +402,6 @@ header {
   justify-content: space-between;
   border-bottom: 1px solid #F2F2F2;
 }
-.burger_menu__inner:nth-child(3) {
-  display: none;
-}
 .burger_menu__inner:nth-child(4) {
   padding-top: 15px;
   padding-bottom: 35px;
@@ -430,7 +422,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
-  color: #36373D;
+  color: #b7b7b7;
   text-decoration: none;
 }
 .burger_menu__inner__list__item__link--cat {
@@ -498,22 +490,21 @@ header {
 .burger_menu__inner__lang__list__item {
   padding: 10px 0;
 }
-.burger_menu__inner__lang__list__item__text {
-  font-weight: 700;
+.burger_menu__inner__list__item--hid {
+  display: none;
 }
 .burger_menu__inner__list__item--contacts {
   padding-bottom: 0;
 }
 .burger_menu__inner__list__item__link {
   font-size: 15px;
-  font-weight: 700;
 }
 .burger_menu__inner__list__item__link--contacts {
   font-size: 16px;
   color: #07C4AE;
 }
 .burger_menu__inner__list__item__link:hover {
-  color: #B7B7B7;
+  color: #07C4AE;
 }
 .burger_menu__inner__list-soc_items {
   display: flex;
