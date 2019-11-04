@@ -164,17 +164,18 @@ header {
   top: 48px;
   right: 30px;
   background: #FFFFFF;
-  box-shadow: 0 5px 10px #b7b7b7;
+  /*box-shadow: 0 5px 10px #b7b7b7;*/
   border: 1px solid #EFF2F4;
   border-radius: 3px;
   display: none;
+  transition:all 0.2s;
 }
 .header__submenu_ext__link {
   display: block;
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #b7b7b7;
+  color: #6e7380;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -212,17 +213,18 @@ header {
   top: 46px;
   right: 0;
   background: #FFFFFF;
-  box-shadow: 0 5px 10px #b7b7b7;
+  /*box-shadow: 0 5px 10px #b7b7b7;*/
   border: 1px solid #EFF2F4;
   border-radius: 3px;
   display: none;
+  transition:all 0.2s;
 }
 .header__calendar__menu__link {
   display: block;
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #b7b7b7;
+  color: #6e7380;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -256,10 +258,11 @@ header {
   top: 46px;
   right: 0;
   background: #FFFFFF;
-  box-shadow: 0 5px 10px #b7b7b7;
+  /*box-shadow: 0 5px 10px #b7b7b7;*/
   border: 1px solid #EFF2F4;
   border-radius: 3px;
   display: none;
+  transition:all 0.2s;
 }
 .header__location__menu__inp {
   width: 100%;
@@ -287,7 +290,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #b7b7b7;
+  color: #6e7380;
   padding: 7px 0 7px 5px;
   transition:all 0.2s;
   text-decoration: none;
@@ -303,6 +306,7 @@ header {
   position: relative;
   margin-left: 30px;
   display: none;
+  transition:all 0.2s;
 }
 .header__lang__menu--cur {
   display: flex;
@@ -339,7 +343,7 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #b7b7b7;
+  color: #6e7380;
   padding: 7px 0 7px 5px;
   transition: all 0.2s;
   text-decoration: none;
@@ -400,7 +404,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #F2F2F2;
+  /*border-bottom: 1px solid #F2F2F2;*/
 }
 .burger_menu__inner:nth-child(4) {
   padding-top: 15px;
@@ -412,6 +416,9 @@ header {
   border-bottom: none;
   justify-content: inherit;
 }
+.burger_menu__inner__lang {
+  display: none;
+}
 .burger_menu__inner__lang__list__item__link,
 .burger_menu__inner__lang__list__item__text,
 .burger_menu__inner__link,
@@ -422,11 +429,8 @@ header {
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
-  color: #b7b7b7;
+  color: #6e7380;
   text-decoration: none;
-}
-.burger_menu__inner__list__item__link--cat {
-  margin-left: 20px;
 }
 .burger_menu__inner__lang__list__item__img {
   margin-left: 15px;
@@ -440,6 +444,7 @@ header {
 .burger_menu__inner__close_but {
   width: 16px;
   height: 16px;
+  margin-left: 10px;
   cursor: pointer;
 }
 .burger__line--first {
@@ -469,6 +474,7 @@ header {
 .burger_menu__inner__text--bus {
   font-size: 16px;
   font-weight: 700;
+  color: #36373D;
 }
 .burger_menu__inner__list,
 .burger_menu__inner__lang__list {
@@ -660,15 +666,15 @@ header {
   height: 0;
 }
 .header__tags__wrapper__list {
-  width: 820px;
+  width: 940px;
   list-style-type: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .header__tags__wrapper__list__item {
-  margin: 0 5px;
-  background: rgba(54,55,61, 0.5);
+  margin: 0 5px 10px 5px;
   border-radius: 16px;
 }
 .header__tags__wrapper__list__item:first-child {
@@ -677,9 +683,6 @@ header {
 .header__tags__wrapper__list__item:last-child {
   margin-right: 0;
 }
-.header__tags__wrapper__list__item:hover {
-  background: rgba(7,196,174, 1);
-}
 .header__tags__wrapper__list__item__link {
   padding: 5px 20px;
   font-family: 'Roboto', sans-serif;
@@ -687,6 +690,10 @@ header {
   display: block;
   text-decoration: none;
   color: white;
+  transition:all 0.2s;
+}
+.header__tags__wrapper__list__item__link:hover {
+  color: #6e7380;
 }
 /*search-box popup*/
 .header__search_box__popup {
@@ -864,9 +871,6 @@ header {
   .header__menu__list__item__city_name--loc {
     display: block;
   }
-  .header__menu__list__item--lang {
-    display: block;
-  }
   .header__menu__list__item__lang--cur {
     font-size: 13px;
   }
@@ -878,6 +882,9 @@ header {
   }
   .header__title__text {
     font-size: 40px;
+  }
+  .header__tags__wrapper__list {
+    width: 650px;
   }
   .header__search_box__popup__wrapper {
     width: 650px;
@@ -924,20 +931,18 @@ header {
 .header__menu__list__item--loc {
   margin-left: 28px;
 }
-.header__menu__list__item--lang {
-  display: block;
-}
 .header__menu__list__item--ent {
+  margin-left: 45px;
   display: block;
 }
 .header__info__inner--title_box {
-  width: 730px;
+  width: 1020px;
 }
 .header__title__text {
   font-size: 40px;
 }
 .header__search_box__popup__wrapper {
-  width: 650px;
+  width: 940px;
 } 
 .header__search_box__popup__wrapper__info_box__concerts_box__inner {
   display: flex;
