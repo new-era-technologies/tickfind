@@ -38,7 +38,9 @@ $(document).ready(function(e) {
 	/*show add info in burger menu*/
 	$('.burger_menu__inner__list__item__link--categories').click(function(e) {
 		e.preventDefault();
+		$(this).parent().css('display', 'none');
 		$('.burger_menu__inner__list__item--hid').slideToggle(200);
+		$(this).css('display', 'none');
 	});
 
 	/*show menu ext*/
