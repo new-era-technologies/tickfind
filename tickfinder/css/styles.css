@@ -593,7 +593,6 @@ header {
 }
 /*info-title*/
 .header__title {
-  padding: 0 15px;
 }
 .header__title__text {
   font-family: 'Roboto', sans-serif;
@@ -672,6 +671,9 @@ header {
 .header__tags__wrapper__list__item {
   margin: 0 5px 10px 5px;
   border-radius: 16px;
+}
+.header__tags__wrapper__list__item:first-child {
+  margin-left: 0;
 }
 .header__tags__wrapper__list__item__link {
   padding: 5px 20px;

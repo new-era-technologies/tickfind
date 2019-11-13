@@ -1,7 +1,7 @@
 $(document).ready(function(e) {
 
 	/*header-tags marginLeft*/
-	var hTagsLeft = $('.header__info__inner--title_box').offset().left + 15 + 'px';
+	var hTagsLeft = $('.header__info__inner--title_box').offset().left + 'px';
 	var hTagsWidth = 0;
 	if ($(window).innerWidth() < 960) {
 		$('.header__tags__wrapper__list__item:nth-child(1)').css('marginLeft', hTagsLeft);
