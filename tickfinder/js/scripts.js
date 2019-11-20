@@ -104,6 +104,10 @@ $(document).ready(function(e) {
 			$('.header__lang__menu--cho').css('display', 'none');
 			$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 		}
+		if (!$(e.target).closest('.header__search_box__input__inner__text').length) {
+			$('.header__search_box__popup').css('display', 'none');
+		}
+
 	});
 
 	/*fetch cities*/
@@ -344,6 +348,7 @@ $(document).ready(function(e) {
 	var tagsColArr = ['#07C4AE', '#F27877', '#FABE8A', '#2F5677', '#50CDE3', '#56A5FF', '#7765E3', '#8386B5', '#AC8CBD', '#3F737B'];
 	$('.header__tags__wrapper__list__item').each(function() {
 		var tagCol = tagsColArr[Math.floor(Math.random()*tagsColArr.length)];
+		tagsColArr.splice(tagsColArr.indexOf(tagCol),1);
 		$(this).css('background', tagCol);
 	})
 
