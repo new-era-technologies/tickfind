@@ -698,7 +698,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
 }
 .header__tags__wrapper__list__item {
   margin: 0 5px 10px 5px;
@@ -834,6 +833,10 @@ header {
   text-align: center;
   text-decoration: none;
 }
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se > a,
+.header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se > p {
+  font-size: 13px;
+}
 .header__search_box__popup__wrapper__info_box__load_more {
   margin: 20px auto;
   padding: 0;
@@ -913,6 +916,7 @@ header {
   }
   .header__tags__wrapper__list {
     width: 735px;
+    justify-content: space-between;
   }
   .header__tags__wrapper__list__item {
     margin: 0 0 10px 0;

@@ -106,9 +106,11 @@ $(document).ready(function(e) {
 		}
 		if (!$(e.target).closest('.header__search_box__input__inner__text').length) {
 			$('.header__search_box__popup--main').css('display', 'none');
+			$('.header__search_box__input__inner__text').val('');
 		}
 		if (!$(e.target).closest('.header__menu__list__item--search').length) {
 			$('.header__search_box__popup--sec').css('display', 'none');
+			$('.header__menu__list__item__text--search_lo').val('');
 		}
 
 	});
@@ -271,20 +273,15 @@ $(document).ready(function(e) {
 	}
 
 	/*scroll to search menu*/
-	$('.header__search_box__input__inner__text').click(function() {
-		// $('html,body').animate({
-		// 	scrollTop: $('.header__info__inner--title_box').offset().top
-		// }, 200);
-		clearSearch();
-		$('.header__search_box__popup--main').css('display', 'block');
-	});
-	$('.header__menu__list__item--search').click(function() {
-		clearSearch();
-		$('.header__search_box__popup--sec').css('display', 'block');
-		$('.header__menu__list__item__text--search').focus();
-	});
+	// $('.header__search_box__input__inner__text').click(function() {
+	// 	// $('html,body').animate({
+	// 	// 	scrollTop: $('.header__info__inner--title_box').offset().top
+	// 	// }, 200);
+	// });
+	// $('.header__menu__list__item--search').click(function() {
+	// 	$('.header__menu__list__item__text--search').focus();
+	// });
 	function clearSearch() {
-		// $('body').toggleClass('hidden-body');
 		$('.header__search_box__popup__wrapper__info_box__links_box').children().remove();
 		$('.header__search_box__popup__wrapper__info_box__concerts_box').children().remove();
 		$('.header__search_box__popup__wrapper__info_box__artists__inner').children().remove();
@@ -294,7 +291,7 @@ $(document).ready(function(e) {
 	/*show search-menu*/
 	$('.header__menu__list__item__text--search').keyup(findArt);
 	$('.header__search_box__input__inner__text').keyup(findArt);
-	function findArt() {
+	function findArt(e) {
 
 		fetch('https://tickfind.com/attraction.json')
 		.then(function(res) { 
@@ -303,9 +300,12 @@ $(document).ready(function(e) {
 		.then(function(dataConcerts) {
 			var adr = [];
 			var arrData = [];
-			$('.header__search_box__popup__wrapper__info_box__links_box').children().remove();
-			$('.header__search_box__popup__wrapper__info_box__concerts_box').children().remove();
-			$('.header__search_box__popup__wrapper__info_box__artists__inner').children().remove();
+			clearSearch();
+			if (e.target == document.querySelector('.header__search_box__input__inner__text')) {
+				$('.header__search_box__popup--main').css('display', 'block');
+			} else {
+				$('.header__search_box__popup--sec').css('display', 'block');
+			}
 			for(var i = 0; i < dataConcerts.length; i++) {
 				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_lo').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_lo').val()) != -1)) && $('.header__menu__list__item__text--search_lo').val())) {
 					arrData.push(dataConcerts[i]);
@@ -336,7 +336,7 @@ $(document).ready(function(e) {
 						'<p class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--place">' + arrData[b].building_name + '</p>' +
 						'</a>' +
 						'</div>' +
-						'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__price">' +
+						'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__price header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se">' +
 						'<a href="' + 'https://tickfind.com/hall/' + arrData[b].event_alias + '.htm' + '" target="_blank">' +
 						'<p>' + 'от ' + arrData[b].price_min + ' ₴' + '</p>' +
 						'</a>' +
@@ -357,7 +357,7 @@ $(document).ready(function(e) {
 				$('.header__search_box__popup__wrapper__info_box__artists__inner').append('<a class="header__search_box__popup__wrapper__info_box__artists__inner__link" >' + arrArtNam[k] + '</a>');
 			};
 		});
-	};
+};
 
 /*change color background header-tags*/
 var tagsColArr = ['#07C4AE', '#F27877', '#FABE8A', '#2F5677', '#50CDE3', '#56A5FF', '#7765E3', '#8386B5', '#AC8CBD', '#3F737B'];
