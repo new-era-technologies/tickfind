@@ -61,8 +61,25 @@
 							</li>
 							<li class="header__menu__list__item header__menu__list__item--search">
 								<img class="header__menu__list__item__img header__menu__list__item__img--search" src="img/search_menu.svg" alt="search-img">
-								<span class="header__menu__list__item__text--search_sho">Поиск...</span>
-								<span class="header__menu__list__item__text--search_lo">Ищи концерт, исполнителя, фестиваль...</span>
+								<input class="header__menu__list__item__text--search header__menu__list__item__text--search_sho header__search" type="text" name="" placeholder="Поиск...">
+								<input class="header__menu__list__item__text--search header__menu__list__item__text--search_lo" type="text" name="" placeholder="Ищи концерт, исполнителя, фестиваль...">
+							<div class="header__search_box__popup header__search_box__popup--sec">
+								<div class="header__search_box__popup__wrapper header__search_box__popup__wrapper--sec">
+									<div class="header__search_box__popup__wrapper__info_box">
+										<p class="header__search_box__popup__wrapper__info_box__title">Результаты поиска</p>
+										<div class="header__search_box__popup__wrapper__info_box__links_box"></div>
+										<div class="header__search_box__popup__wrapper__info_box__concerts">
+											<p class="header__search_box__popup__wrapper__info_box__title header__search_box__popup__wrapper__info_box__title--hidden">Концерты</p>
+											<div class="header__search_box__popup__wrapper__info_box__concerts_box"></div>
+										</div>
+										<div class="header__search_box__popup__wrapper__info_box__artists">
+											<p class="header__search_box__popup__wrapper__info_box__title header__search_box__popup__wrapper__info_box__title--hidden">Исполнители</p>
+											<div class="header__search_box__popup__wrapper__info_box__artists__inner"></div>
+										</div>
+										<a href="https://tickfind.com/type/city/hday/date/index.htm" class="header__search_box__popup__wrapper__info_box__load_more">Все результаты...</a>
+									</div>
+								</div>
+							</div>
 							</li>
 						</ul>
 					</div>
@@ -310,7 +327,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="header__search_box__popup">
+							<div class="header__search_box__popup header__search_box__popup--main">
 								<div class="header__search_box__popup__wrapper">
 									<div class="header__search_box__popup__wrapper__info_box">
 										<p class="header__search_box__popup__wrapper__info_box__title">Результаты поиска</p>

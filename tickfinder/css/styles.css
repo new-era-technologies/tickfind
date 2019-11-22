@@ -195,11 +195,33 @@ header {
 .header__menu__list__item__text--search_sho,
 .header__menu__list__item__text--search_lo {
   margin-left: 12px;
+  border: none;
+  outline: none;
+  display: none;
+}
+.header__menu__list__item__text--search_sho::placeholder,
+.header__menu__list__item__text--search_lo::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   letter-spacing: 0.28px;
-  color: #B7B7B7;
-  display: none;
+  color: #b7b7b7;
+  opacity: 1; /* Firefox */
+}
+
+.header__menu__list__item__text--search_sho:-ms-input-placeholder,
+.header__menu__list__item__text--search_lo:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #b7b7b7;
+}
+
+.header__menu__list__item__text--search_sho::-ms-input-placeholder,
+.header__menu__list__item__text--search_lo::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #b7b7b7;
 }
 .header__menu__list__item--calend {
   position: relative;
@@ -676,6 +698,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 .header__tags__wrapper__list__item {
   margin: 0 5px 10px 5px;
@@ -705,6 +728,10 @@ header {
   top: 72px;
   left: 0;
   z-index: 999;
+}
+.header__search_box__popup--sec {
+  width: 520px;
+  top: 46px;
 }
 .header__search_box__popup__wrapper {
   width: 100%;
@@ -835,6 +862,9 @@ header {
   .header__title__text {
     font-size: 32px;
   }
+  .header__search_box__popup--sec {
+    left: -80px;
+  }
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1249px) {
@@ -884,7 +914,10 @@ header {
   .header__tags__wrapper__list {
     width: 735px;
   }
-  .header__search_box__popup__wrapper {
+  .header__tags__wrapper__list__item {
+    margin: 0 0 10px 0;
+  }
+  .header__search_box__popup__wrapper--main {
     width: 730px;
   } 
   .header__search_box__popup__wrapper__info_box__concerts_box__inner {
@@ -955,7 +988,10 @@ header {
 .header__tags__wrapper__list {
   width: 1010px;
 }
-.header__search_box__popup__wrapper {
+.header__search_box__popup--sec {
+  left: -95px;
+}
+.header__search_box__popup__wrapper--main {
   width: 1020px;
 } 
 .header__search_box__popup__wrapper__info_box__concerts_box__inner {
