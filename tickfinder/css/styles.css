@@ -192,13 +192,33 @@ header {
 .header__menu__list__item__img--search {
   display: none;
 }
+.header__popup__search__inp {
+  width: 100%;
+  height: 70px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  z-index: 99999999;
+}
+.header__menu__list__item__img--search_popup,
+.header__menu__list__item__text--search_popup {
+  display: block;
+}
+.header__menu__list__item__text--search_popup,
 .header__menu__list__item__text--search_sho,
 .header__menu__list__item__text--search_lo {
+  width: 100%;
   margin-left: 12px;
   border: none;
   outline: none;
+}
+.header__menu__list__item__text--search_sho,
+.header__menu__list__item__text--search_lo {
   display: none;
 }
+.header__menu__list__item__text--search::placeholder,
 .header__menu__list__item__text--search_sho::placeholder,
 .header__menu__list__item__text--search_lo::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family: 'Roboto', sans-serif;
@@ -207,7 +227,7 @@ header {
   color: #b7b7b7;
   opacity: 1; /* Firefox */
 }
-
+.header__menu__list__item__text--search:-ms-input-placeholder,
 .header__menu__list__item__text--search_sho:-ms-input-placeholder,
 .header__menu__list__item__text--search_lo:-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-family: 'Roboto', sans-serif;
@@ -215,7 +235,7 @@ header {
   letter-spacing: 0.28px;
   color: #b7b7b7;
 }
-
+.header__menu__list__item__text--search::-ms-input-placeholder,
 .header__menu__list__item__text--search_sho::-ms-input-placeholder,
 .header__menu__list__item__text--search_lo::-ms-input-placeholder { /* Microsoft Edge */
   font-family: 'Roboto', sans-serif;
@@ -393,7 +413,8 @@ header {
   cursor: pointer;
 }
 .burger__line,
-.burger__line__close {
+.burger__line__close,
+.header__popup__search__close__line {
   width: 20px;
   height: 2px;
   background-color: white;
@@ -462,21 +483,32 @@ header {
 .header__menu__list__item__img__lang--rotated {
   transform: rotate(630deg);
 }
-.burger_menu__inner__close_but {
+.burger_menu__inner__close_but,
+.header__popup__search__close_but {
   width: 16px;
   height: 16px;
   margin-left: 10px;
   cursor: pointer;
 }
-.burger__line--first {
+.burger__line--first,
+.header__popup__search__close__line--first {
   background-color: #36373d;
   -webkit-transform: rotate(-135deg) translate(-2px, -5px);
   transform: rotate(-135deg) translate(-2px, -5px);
 }
-.burger__line--second {
+.header__popup__search__close__line--first {
+  -webkit-transform: rotate(-135deg) translate(-1px, -3px);
+  transform: rotate(-135deg) translate(-1px, -3px);
+}
+.burger__line--second,
+.header__popup__search__close__line--second {
   background-color: #36373d;
   -webkit-transform: rotate(-45deg) translate(-1px, -2px);
   transform: rotate(-45deg) translate(-1px, -2px);
+}
+.header__popup__search__close__line--second {
+  -webkit-transform: rotate(-45deg) translate(1px, -4px);
+  transform: rotate(-45deg) translate(1px, -4px);
 }
 .burger_menu__inner {
   padding-left: 30px;
@@ -719,18 +751,21 @@ header {
   color: #6e7380;
 }
 /*search-box popup*/
-.header__search_box__popup {
+.header__search_box__popup,
+.header__popup__search {
   width: 100%;
   height: 100%;
   display: none;
   position: absolute;
-  top: 72px;
+  top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99999;
 }
-.header__search_box__popup--sec {
-  width: 520px;
-  top: 46px;
+.header__search_box__popup--mob {
+  top: 70px;
+}
+.header__popup__search {
+  background-color: white;
 }
 .header__search_box__popup__wrapper {
   width: 100%;
@@ -741,6 +776,11 @@ header {
   border: 1px solid #EFF2F4;
   border-radius: 8px;
   box-sizing: border-box;
+}
+.header__search_box__popup__wrapper--mob {
+  border: none;
+  border-radius: 0;
+  padding-bottom: 5px;
 }
 .header__search_box__popup__wrapper__info_box__title {
   font-family: 'Roboto', sans-serif;
@@ -787,6 +827,7 @@ header {
   display: flex;
 }
 .header__search_box__popup__wrapper__info_box__concerts_box__inner__img_box__img {
+  width: 128px;
   margin: 0 auto;
   border-radius: 3px;
 }
@@ -833,10 +874,6 @@ header {
   text-align: center;
   text-decoration: none;
 }
-.header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se > a,
-.header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se > p {
-  font-size: 13px;
-}
 .header__search_box__popup__wrapper__info_box__load_more {
   margin: 20px auto;
   padding: 0;
@@ -853,6 +890,11 @@ header {
   .header__title__text {
     font-size: 30px;
   }
+  .header__search_box__popup__wrapper__info_box__concerts_box--mob > .header__search_box__popup__wrapper__info_box__concerts_box__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -865,7 +907,12 @@ header {
   .header__title__text {
     font-size: 32px;
   }
+  .header__search_box__popup {
+    top: 72px;
+  }
   .header__search_box__popup--sec {
+    width: 520px;
+    top: 46px;
     left: -80px;
   }
 }
@@ -920,6 +967,13 @@ header {
   }
   .header__tags__wrapper__list__item {
     margin: 0 0 10px 0;
+  }
+  .header__search_box__popup {
+    top: 72px;
+  }
+  .header__search_box__popup--sec {
+    width: 520px;
+    top: 46px;
   }
   .header__search_box__popup__wrapper--main {
     width: 730px;
@@ -992,7 +1046,12 @@ header {
 .header__tags__wrapper__list {
   width: 1010px;
 }
+.header__search_box__popup {
+  top: 72px;
+}
 .header__search_box__popup--sec {
+  width: 520px;
+  top: 46px;
   left: -95px;
 }
 .header__search_box__popup__wrapper--main {

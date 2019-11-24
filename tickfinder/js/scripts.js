@@ -273,14 +273,25 @@ $(document).ready(function(e) {
 	}
 
 	/*scroll to search menu*/
-	// $('.header__search_box__input__inner__text').click(function() {
-	// 	// $('html,body').animate({
-	// 	// 	scrollTop: $('.header__info__inner--title_box').offset().top
-	// 	// }, 200);
-	// });
-	// $('.header__menu__list__item--search').click(function() {
-	// 	$('.header__menu__list__item__text--search').focus();
-	// });
+	if ($(window).innerWidth() < 768) {
+		$('.header__search_box__input__inner__text').click(function() {
+		// $('html,body').animate({
+		// 	scrollTop: $('.header__info__inner--title_box').offset().top
+		// }, 200);
+		$('.header__popup__search').css('display', 'block');
+		$('.header__menu__list__item__text--search_popup').focus();
+	});
+	$('.header__menu__list__item--search').click(function() {
+		$('.header__popup__search').css('display', 'block');
+		$('.header__menu__list__item__text--search_popup').focus();
+	});
+	}
+	$('.header__menu__list__item--search').click(function() {
+		$('.header__menu__list__item__text--search_lo').focus();
+	});
+	$('.header__popup__search__close_but').click(function() {
+		$('.header__popup__search').animate({'opacity': 'toggle'}, 200);
+	});
 	function clearSearch() {
 		$('.header__search_box__popup__wrapper__info_box__links_box').children().remove();
 		$('.header__search_box__popup__wrapper__info_box__concerts_box').children().remove();
@@ -291,6 +302,7 @@ $(document).ready(function(e) {
 	/*show search-menu*/
 	$('.header__menu__list__item__text--search').keyup(findArt);
 	$('.header__search_box__input__inner__text').keyup(findArt);
+	$('.header__menu__list__item__text--search_popup').keyup(findArt);
 	function findArt(e) {
 
 		fetch('https://tickfind.com/attraction.json')
@@ -303,11 +315,13 @@ $(document).ready(function(e) {
 			clearSearch();
 			if (e.target == document.querySelector('.header__search_box__input__inner__text')) {
 				$('.header__search_box__popup--main').css('display', 'block');
+			} else if (e.target == document.querySelector('.header__menu__list__item__text--search_popup')) {
+				$('.header__search_box__popup--mob').css('display', 'block');
 			} else {
 				$('.header__search_box__popup--sec').css('display', 'block');
 			}
 			for(var i = 0; i < dataConcerts.length; i++) {
-				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_lo').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_lo').val()) != -1)) && $('.header__menu__list__item__text--search_lo').val())) {
+				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_lo').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_lo').val()) != -1)) && $('.header__menu__list__item__text--search_lo').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_popup').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_popup').val()) != -1)) && $('.header__menu__list__item__text--search_popup').val())) {
 					arrData.push(dataConcerts[i]);
 					
 					/* artists */
@@ -336,7 +350,7 @@ $(document).ready(function(e) {
 						'<p class="header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text--place">' + arrData[b].building_name + '</p>' +
 						'</a>' +
 						'</div>' +
-						'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__price header__search_box__popup__wrapper__info_box__concerts_box__inner__price--se">' +
+						'<div class="header__search_box__popup__wrapper__info_box__concerts_box__inner__price">' +
 						'<a href="' + 'https://tickfind.com/hall/' + arrData[b].event_alias + '.htm' + '" target="_blank">' +
 						'<p>' + 'от ' + arrData[b].price_min + ' ₴' + '</p>' +
 						'</a>' +
