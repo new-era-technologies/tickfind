@@ -11,6 +11,8 @@ $(document).ready(function(e) {
 		$('.header__tags__wrapper__list').css('width', hTagsWidth + 'px');
 	} else {
 		$('.header__tags').css('marginLeft', hTagsLeft);
+		var fullinfoMarLeft = ($('.header__info__inner--title_box').offset().left - $('.container').offset().left) + 'px';
+		$('.concerts_full_info').css('margin', '0 ' + fullinfoMarLeft);
 	}
 
 	/*burger show by click*/

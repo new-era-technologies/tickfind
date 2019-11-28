@@ -125,7 +125,7 @@ header {
   display: flex;
 }
 .header__menu__list__item__img {
-
+  width: 16px;
 }
 .header__menu__list__item__img--logo {
   width: 100px;
@@ -184,6 +184,7 @@ header {
   color: #07C4AE;
 }
 .header__menu__list__item--search {
+  margin-right: 17px;
   position: relative;
   display: flex;
   align-items: center;
@@ -213,6 +214,12 @@ header {
   margin-left: 12px;
   border: none;
   outline: none;
+}
+.header__menu__list__item__text--search_sho {
+  width: 55px;
+}
+.header__menu__list__item__text--search_lo {
+  width: 280px;
 }
 .header__menu__list__item__text--search_sho,
 .header__menu__list__item__text--search_lo {
@@ -290,6 +297,9 @@ header {
   font-size: 13px;
   color: white;
   display: none;
+}
+.header__menu__list__item__img--loc {
+  width: 12px;
 }
 .header__location__menu {
   width: 175px;
@@ -882,6 +892,98 @@ header {
   display: none;
 }
 
+/*header-down*/
+.concerts_full_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.concerts_full_info__inner {
+  width: 60%;
+  margin: 20px 0 15px 0;
+}
+.concerts_full_info__inner:nth-child(2) {
+  width: 40%;
+}
+.concerts_full_info__inner__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+.concerts_full_info__inner__list__item {
+  margin-bottom: 5px;
+  padding: 10px 24px;
+  border-radius: 20px;
+}
+.concerts_full_info__inner__list__item--date {
+  margin-right: 5px;
+  background: #E6F9F7;
+  border: 1px solid #07C4AE;
+}
+.concerts_full_info__inner__list__item--event {
+  margin-right: 5px;
+  background: #07C4AE;
+}
+.concerts_full_info__inner__list__item--city {
+  padding: 0;
+}
+.concerts_full_info__inner__list__item__link {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #36373D;
+  text-decoration: none;
+}
+.concerts_full_info__inner__list__item--event > .concerts_full_info__inner__list__item__link {
+  color: white;
+}
+.concerts_full_info__inner__list__item__link--best:hover {
+  color: #07C4AE;
+}
+.concerts_full_info__inner__list__item__link > img {
+  display: flex;
+}
+.concerts_full_info__inner__list__item__link__close_but {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+.close_but_line {
+  width: 20px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #36373D;
+  transition: 0.4s;
+  border-radius: 1px;
+}
+.close_but_line--first {
+  -webkit-transform: rotate(-135deg) translate(-1px, -5px);
+  transform: rotate(-135deg) translate(-1px, -5px);
+}
+.close_but_line--second {
+  -webkit-transform: rotate(-45deg) translate(-1px, -4px);
+  transform: rotate(-45deg) translate(-1px, -4px);
+}
+.concerts_full_info__inner__list__item--page_cols {
+  margin-left: 56px;
+  padding: 0;
+  display: flex;
+}
+.concerts_full_info__inner__list__item__link--page_cols {
+  width: 23px;
+  height: 21px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.concerts_full_info__inner__list__item__link--page_cols > span {
+  width: 6px;
+  height: 6px;
+  background: #07C4AE;
+}
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .header__menu__list__item--loc {
@@ -919,7 +1021,7 @@ header {
 
 @media only screen and (min-width: 960px) and (max-width: 1249px) {
   header {
-    height: 100vh;
+    height: 500px;
   }
   .container {
     width: 960px;
@@ -997,7 +1099,7 @@ header {
 
 @media only screen and (min-width: 1250px) {
   header {
-    height: 100vh;
+    height: 500px;
   }
   .container { 
    width: 1250px;
@@ -1071,5 +1173,16 @@ header {
 .header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
   margin-right: 15px;
   font-size: 15px;
+}
+
+/*header-down*/
+.concerts_full_info__inner__list {
+  flex-direction: row;
+}
+.concerts_full_info__inner__list--tags {
+  justify-content: flex-start;
+}
+.concerts_full_info__inner__list--best {
+  justify-content: flex-end;
 }
 }
