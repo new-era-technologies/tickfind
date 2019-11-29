@@ -1100,6 +1100,14 @@ header {
   .theatres {
     height: 300px;
   }
+  .container,
+  .container--tags {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .header__menu__wrapper {
+    width: 920px;
+  }
   .header__menu__list__item__img--logo {
     width: 131px;
   }
@@ -1125,7 +1133,7 @@ header {
     display: block;
   }
   .header__info {
-    width: 92%;
+    width: 88%;
     margin: 0 auto;
     padding-top: 193px;
   }
@@ -1142,7 +1150,7 @@ header {
     overflow-y: initial;
   }
   .header__tags__wrapper__list {
-    width: 83%;
+    width: 88%;
     margin: 0 auto;
     padding: 0;
   }
@@ -1190,6 +1198,14 @@ header {
   .theatres {
     height: 300px;
   }
+  .container,
+  .container--tags {
+    width: 1250px;
+    margin: 0 auto;
+  }
+  .header__menu__wrapper {
+    width: 1210px;
+  }
   .header__menu__list__item__img--logo {
     width: 131px;
   }
@@ -1219,7 +1235,7 @@ header {
     display: block;
   }
   .header__info {
-    width: 92%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 228px;
   }
@@ -1233,7 +1249,7 @@ header {
     font-size: 40px;
   }
   .header__tags__wrapper__list {
-    width: 83%;
+    width: 90%;
     margin: 0 auto;
     padding: 0;
   }
