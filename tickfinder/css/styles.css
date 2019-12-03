@@ -411,6 +411,7 @@ header {
 }
 .header__menu__list__item--ent {
   margin-left: 30px;
+  display: none;
 }
 .header__menu__list__item__inner--ent {
   display: none;
