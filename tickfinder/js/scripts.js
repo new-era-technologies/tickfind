@@ -57,18 +57,12 @@ $(document).ready(function(e) {
 	$('.header__menu_ext__link--dots').click(function(e) {
 		e.preventDefault();
 		$('.header__submenu_ext').slideToggle(200);
-		$('.header__calendar__menu').css('display', 'none');
-		$('.header__location__menu').css('display', 'none');
-		$('.header__lang__menu--cho').css('display', 'none');
 		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
 	/* show calendar by click */
 	$('.header__menu__list__item__img--calend').click(function() {
 		$('.header__calendar__menu').slideToggle(200);
-		$('.header__submenu_ext').css('display', 'none');
-		$('.header__location__menu').css('display', 'none');
-		$('.header__lang__menu--cho').css('display', 'none');
 		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
@@ -76,9 +70,6 @@ $(document).ready(function(e) {
 	$('.header__menu__list__item--loc').click(function() {
 		$('.header__location__menu').slideToggle(200);
 		$('.header__location__menu__inp').focus();
-		$('.header__submenu_ext').css('display', 'none');
-		$('.header__calendar__menu').css('display', 'none');
-		$('.header__lang__menu--cho').css('display', 'none');
 		$('.header__menu__list__item__img--lang').removeClass('header__menu__list__item__img__lang--rotated');
 	});
 
@@ -86,12 +77,14 @@ $(document).ready(function(e) {
 	$('.header__menu__list__item--lang').click(function() {
 		$('.header__menu__list__item__img--lang').toggleClass('header__menu__list__item__img__lang--rotated');
 		$('.header__lang__menu--cho').slideToggle(200);
-		$('.header__submenu_ext').css('display', 'none');
-		$('.header__calendar__menu').css('display', 'none');
-		$('.header__location__menu').css('display', 'none');
 	});
 
-	/*close menu-ext, calendar, cities, lang*/
+	/* show client-cabinet by click */
+	$('.header__menu__list__item__inner__img').click(function() {
+		$('.header__enter_cab__menu').slideToggle(200);
+	});
+
+	/*close menu-ext, calendar, cities, lang, client-cab*/
 	$(this).click(function(e) {
 		if (!$(e.target).closest('.header__menu_ext__link--dots').length) {
 			$('.header__submenu_ext').css('display', 'none');
@@ -113,6 +106,9 @@ $(document).ready(function(e) {
 		if (!$(e.target).closest('.header__menu__list__item--search').length) {
 			$('.header__search_box__popup--sec').css('display', 'none');
 			$('.header__menu__list__item__text--search_lo').val('');
+		}
+		if (!$(e.target).closest('.header__menu__list__item__inner__img').length) {
+			$('.header__enter_cab__menu').css('display', 'none');
 		}
 
 	});
