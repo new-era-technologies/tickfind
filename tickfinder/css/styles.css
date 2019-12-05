@@ -707,6 +707,9 @@ header {
   -webkit-box-sizing: border-box;
 }
 /*info-title*/
+.header__title {
+  text-align: center;
+}
 .header__title__text {
   font-family: 'Roboto', sans-serif;
   font-size: 21px;
@@ -1243,7 +1246,7 @@ header {
     margin: 0 auto;
   }
   .header__menu__wrapper {
-    width: 1210px;
+    width: 1110px;
   }
   .header__menu__list__item__img--logo {
     width: 131px;
@@ -1273,12 +1276,14 @@ header {
   .burger_menu__inner__list--desk {
     display: block;
   }
-  .header__info {
-    width: 90%;
+  .header__info,
+  .header__tags__wrapper__list {
+    width: 832px;
     margin: 0 auto;
     padding-top: 228px;
   }
   .header__info--concert_info {
+    width: 1110px;
     padding-top: 121px;
   }
   .header__info__inner--guarant {
@@ -1288,9 +1293,10 @@ header {
     font-size: 40px;
   }
   .header__tags__wrapper__list {
-    width: 90%;
-    margin: 0 auto;
     padding: 0;
+  }
+  .header__tags__wrapper__list__item {
+    margin: 0 10px 10px 0;
   }
   .header__search_box__popup {
     top: 72px;
@@ -1316,7 +1322,7 @@ header {
     font-size: 15px;
   }
   .concerts_full_info {
-    width: 92%;
+    width: 1110px;
     margin: 0 auto;
   }
   .concerts_full_info__inner:nth-child(2) {
