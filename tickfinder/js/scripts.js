@@ -105,7 +105,7 @@ $(document).ready(function(e) {
 		}
 		if (!$(e.target).closest('.header__menu__list__item--search').length) {
 			$('.header__search_box__popup--sec').css('display', 'none');
-			$('.header__menu__list__item__text--search_lo').val('');
+			$('.header__menu__list__item__text--search').val('');
 		}
 		if (!$(e.target).closest('.header__menu__list__item__inner__img').length) {
 			$('.header__enter_cab__menu').css('display', 'none');
@@ -223,21 +223,19 @@ $(document).ready(function(e) {
 			$('.header__menu__list__item__img--white').css('display', 'none');
 			$('.header__menu__list__item__img--black').css('display', 'block');
 			$('.burger__line').css('backgroundColor', '#36373d');
-			$('.header__menu_ext__link').css('color', '#6E7380');		
-			$('.header__menu__list__item__img--search').css('display', 'block');
+			$('.header__menu_ext__link').css('color', '#6E7380');
 			$('.header__menu_ext__link__img--white').css('display', 'none');
 			$('.header__menu_ext__link__img--black').css('display', 'block');
 			$('.header__menu__list__item__city_name--loc').css('color', '#36373D');
 			$('.header__menu__list__item__lang--cur').css('color', '#36373D');
-			$('.header__menu__list__item--ent > a').css('color', '#07C4AE');
+			$('.header__menu__list__item__inner__link').css('color', '#07C4AE');
+
+			/*search-input placeholder*/
+			$('.header__menu__list__item__text--theatres_search').addClass('header__menu__list__item__text--theatres_search_b');
 
 			/*480*/
-			if ($(window).innerWidth() > 479 && $(window).innerWidth() < 768) {
-				$('.header__menu__list__item__text--search_sho').css('display', 'block');
-			}
-			/*768*/
-			if ($(window).innerWidth() > 767) {
-				$('.header__menu__list__item__text--search_lo').css('display', 'block');
+			if ($(window).innerWidth() > 479) {
+				$('.header__menu__list__item__text--search').css('display', 'block');
 			}
 			/*1250*/
 			if ($(window).innerWidth() > 1249) {
@@ -249,22 +247,23 @@ $(document).ready(function(e) {
 			$('.header__menu__list__item__img--white').css('display', 'block');
 			$('.header__menu__list__item__img--black').css('display', 'none');
 			$('.burger__line').css('backgroundColor', 'white');
-			$('.header__menu_ext__link').css('color', 'white');	
-			$('.header__menu__list__item__img--search').css('display', 'none');
+			$('.header__menu_ext__link').css('color', 'white');
 			$('.header__menu_ext__link__img--white').css('display', 'block');
 			$('.header__menu_ext__link__img--black').css('display', 'none');
 			$('.header__menu__list__item__city_name--loc').css('color', 'white');
 			$('.header__menu__list__item__lang--cur').css('color', 'white');
-			$('.header__menu__list__item--ent > a').css('color', 'white');
+			$('.header__menu__list__item__inner__link').css('color', 'white');
 
-			/*480*/
-			$('.header__menu__list__item__text--search_sho').css('display', 'none');
-			/*768*/
-			$('.header__menu__list__item__text--search_lo').css('display', 'none');
+			/*search-input placeholder*/
+			$('.header__menu__list__item__text--theatres_search').removeClass('header__menu__list__item__text--theatres_search_b');
+
+			$('.header__menu__list__item__text--search').css('display', 'none');
+
 			/*1250*/
 			if ($(window).innerWidth() > 1249) {
 				$('.header__menu__list__item__city_name--loc').css('display', 'block');
 			}
+			/*just for first page*/
 			$('.header__search_box__popup--sec').css('display', 'none');
 
 		}
@@ -285,7 +284,7 @@ $(document).ready(function(e) {
 		});
 	}
 	$('.header__menu__list__item--search').click(function() {
-		$('.header__menu__list__item__text--search_lo').focus();
+		$('.header__menu__list__item__text--search').focus();
 	});
 	$('.header__popup__search__close_but').click(function() {
 		$('.header__popup__search').animate({'opacity': 'toggle'}, 200);
@@ -299,6 +298,7 @@ $(document).ready(function(e) {
 	}
 	/*show search-menu*/
 	$('.header__menu__list__item__text--search').keyup(findArt);
+	$('.header__menu__list__item__text--theatres_search').keyup(findArt);
 	$('.header__search_box__input__inner__text').keyup(findArt);
 	$('.header__menu__list__item__text--search_popup').keyup(findArt);
 	function findArt(e) {
@@ -319,7 +319,7 @@ $(document).ready(function(e) {
 				$('.header__search_box__popup--sec').css('display', 'block');
 			}
 			for(var i = 0; i < dataConcerts.length; i++) {
-				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_lo').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_lo').val()) != -1)) && $('.header__menu__list__item__text--search_lo').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_popup').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_popup').val()) != -1)) && $('.header__menu__list__item__text--search_popup').val())) {
+				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search').val()) != -1)) && $('.header__menu__list__item__text--search').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--theatres_search').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--theatres_search').val()) != -1)) && $('.header__menu__list__item__text--theatres_search').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_popup').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_popup').val()) != -1)) && $('.header__menu__list__item__text--search_popup').val())) {
 					arrData.push(dataConcerts[i]);
 					
 					/* artists */
@@ -372,12 +372,12 @@ $(document).ready(function(e) {
 };
 
 /*change color background header-tags*/
-var tagsColArr = ['#07C4AE', '#F27877', '#FABE8A', '#2F5677', '#50CDE3', '#56A5FF', '#7765E3', '#8386B5', '#AC8CBD', '#3F737B'];
-$('.header__tags__wrapper__list__item').each(function() {
-	var tagCol = tagsColArr[Math.floor(Math.random()*tagsColArr.length)];
-	tagsColArr.splice(tagsColArr.indexOf(tagCol),1);
-	$(this).css('background', tagCol);
-})
+// var tagsColArr = ['#07C4AE', '#F27877', '#FABE8A', '#2F5677', '#50CDE3', '#56A5FF', '#7765E3', '#8386B5', '#AC8CBD', '#3F737B'];
+// $('.header__tags__wrapper__list__item').each(function() {
+// 	var tagCol = tagsColArr[Math.floor(Math.random()*tagsColArr.length)];
+// 	tagsColArr.splice(tagsColArr.indexOf(tagCol),1);
+// 	$(this).css('background', tagCol);
+// });
 
 /*hover page-cols*/
 $('.concerts_full_info__inner__list__item--page_cols').children().hover(function() {

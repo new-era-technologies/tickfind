@@ -185,6 +185,9 @@ header {
   transition:all 0.2s;
   text-decoration: none;
 }
+.header__submenu_ext__link--hidden {
+  display: none;
+}
 .header__menu_ext__link:hover,
 .header__submenu_ext__link:hover {
   color: #07C4AE;
@@ -195,9 +198,6 @@ header {
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-.header__menu__list__item__img--search {
-  display: none;
 }
 .header__popup__search__inp {
   width: 100%;
@@ -214,46 +214,72 @@ header {
   display: block;
 }
 .header__menu__list__item__text--search_popup,
-.header__menu__list__item__text--search_sho,
-.header__menu__list__item__text--search_lo {
+.header__menu__list__item__text--search,
+.header__menu__list__item__text--theatres_search {
   width: 100%;
   margin-left: 12px;
   border: none;
   outline: none;
+  background: transparent;
 }
-.header__menu__list__item__text--search_sho {
-  width: 55px;
-}
-.header__menu__list__item__text--search_lo {
-  width: 280px;
-}
-.header__menu__list__item__text--search_sho,
-.header__menu__list__item__text--search_lo {
+.header__menu__list__item__text--search {
+  width: 158px;
   display: none;
 }
+.header__menu__list__item__text--theatres_search {
+  display: block;
+}
 .header__menu__list__item__text--search::placeholder,
-.header__menu__list__item__text--search_sho::placeholder,
-.header__menu__list__item__text--search_lo::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.header__menu__list__item__text--theatres_search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   letter-spacing: 0.28px;
   color: #b7b7b7;
   opacity: 1; /* Firefox */
 }
+.header__menu__list__item__text--search::-webkit-input-placeholder,
+.header__menu__list__item__text--theatres_search::-webkit-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #b7b7b7;
+}
 .header__menu__list__item__text--search:-ms-input-placeholder,
-.header__menu__list__item__text--search_sho:-ms-input-placeholder,
-.header__menu__list__item__text--search_lo:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.header__menu__list__item__text--theatres_search:-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   letter-spacing: 0.28px;
   color: #b7b7b7;
 }
 .header__menu__list__item__text--search::-ms-input-placeholder,
-.header__menu__list__item__text--search_sho::-ms-input-placeholder,
-.header__menu__list__item__text--search_lo::-ms-input-placeholder { /* Microsoft Edge */
+.header__menu__list__item__text--theatres_search::-ms-input-placeholder { /* Microsoft Edge */
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   letter-spacing: 0.28px;
+  color: #b7b7b7;
+}
+.header__menu__list__item__text--theatres_search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+}
+.header__menu__list__item__text--theatres_search::-webkit-input-placeholder {
+  color: #ffffff;
+}
+.header__menu__list__item__text--theatres_search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+.header__menu__list__item__text--theatres_search::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffffff;
+}
+.header__menu__list__item__text--theatres_search_b::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b7b7b7;
+}
+.header__menu__list__item__text--theatres_search_b::-webkit-input-placeholder {
+  color: #b7b7b7;
+}
+.header__menu__list__item__text--theatres_search_b:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #b7b7b7;
+}
+.header__menu__list__item__text--theatres_search_b::-ms-input-placeholder { /* Microsoft Edge */
   color: #b7b7b7;
 }
 .header__menu__list__item--calend {
@@ -414,7 +440,7 @@ header {
   display: none;
 }
 .header__menu__list__item__inner--ent {
-  display: none;
+  display: block;
 }
 .header__menu__list__item__inner__link {
   font-family: 'Roboto', sans-serif;
@@ -425,7 +451,7 @@ header {
   display: flex;
 }
 .header__menu__list__item__inner--ent_cab {
-  display: block;
+  display: none;
   position: relative;
 }
 .header__menu__list__item__inner__img {
@@ -710,6 +736,9 @@ header {
 .header__title {
   text-align: center;
 }
+.header__title--theatres {
+  text-align: left;
+}
 .header__title__text {
   font-family: 'Roboto', sans-serif;
   font-size: 21px;
@@ -795,6 +824,7 @@ header {
 }
 .header__tags__wrapper__list__item {
   margin: 0 5px;
+  background: rgba(54, 55, 61, 0.5);
   border-radius: 16px;
 }
 .header__guarant__wrapper__list__item {
@@ -820,6 +850,9 @@ header {
 .header__tags__wrapper__list__item:first-child {
   margin-left: 0;
 }
+.header__tags__wrapper__list__item:hover {
+  background: #07C4AE;
+}
 .header__tags__wrapper__list__item__link {
   padding: 5px 20px;
   font-family: 'Roboto', sans-serif;
@@ -828,9 +861,6 @@ header {
   text-decoration: none;
   color: white;
   transition: all 0.2s;
-}
-.header__tags__wrapper__list__item__link:hover {
-  color: #6e7380;
 }
 /*search-box popup*/
 .header__search_box__popup,
@@ -890,7 +920,7 @@ header {
   padding: 0 20px 20px 20px;
 }
 .header__search_box__popup__wrapper__info_box__links_box__link {
-  margin: 5px 20px 15px 20px;
+  margin: 5px 0 15px 0;
   padding: 10px;
   display: block;
   background: #E5F9F7;
@@ -940,7 +970,7 @@ header {
   color: #B7B7B7;
 }
 .header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
-  width: 115px;
+  width: 128px;
   margin: 0 auto;
   padding: 10px 20px;
   background: #07C4AE;
@@ -1090,11 +1120,6 @@ header {
   .header__title__text {
     font-size: 30px;
   }
-  .header__search_box__popup__wrapper__info_box__concerts_box--mob > .header__search_box__popup__wrapper__info_box__concerts_box__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -1119,13 +1144,25 @@ header {
   .header__title__text {
     font-size: 32px;
   }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 280px;
+  }
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info > a > p {
+    text-align: left;
+  }
   .header__search_box__popup {
     top: 72px;
   }
   .header__search_box__popup--sec {
-    width: 520px;
+    width: 650px;
     top: 46px;
-    left: -80px;
+    left: -325px;
   }
   .concerts_full_info__inner:nth-child(2) {
     display: block;
@@ -1137,7 +1174,7 @@ header {
 
 @media only screen and (min-width: 960px) and (max-width: 1249px) {
   header {
-    height: 500px;
+    height: 450px;
   }
   .theatres {
     height: 300px;
@@ -1153,7 +1190,19 @@ header {
   .header__menu__list__item__img--logo {
     width: 131px;
   }
-  .header__menu__list__item__text--search_lo {
+  .header__menu__list__item--menu_ext {
+    display: flex;
+  }
+  .header__menu_ext__link {
+    display: flex;
+  }
+  .header__menu_ext__link--hidden {
+    display: none;
+  }
+  .header__submenu_ext__link--hidden {
+    display: block;
+  }
+  .header__menu__list__item__text--search {
     font-size: 13px;
   }
   .header__menu__list__item--loc {
@@ -1203,23 +1252,24 @@ header {
     top: 72px;
   }
   .header__search_box__popup--sec {
-    width: 520px;
+    width: 650px;
     top: 46px;
+    left: -307px;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
-    width: 50%;
-    margin: 0 15px 0 0;
+    width: 435px;
   }
-  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text {
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info > a > p {
     text-align: left;
   }
-  .header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
-    margin-right: 15px;
-    font-size: 15px;
+  .header__search_box__popup__wrapper--sec > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 280px;
   }
   .concerts_full_info {
     width: 92%;
@@ -1235,7 +1285,7 @@ header {
 
 @media only screen and (min-width: 1250px) {
   header {
-    height: 500px;
+    height: 450px;
   }
   .theatres {
     height: 300px;
@@ -1280,7 +1330,7 @@ header {
   .header__tags__wrapper__list {
     width: 832px;
     margin: 0 auto;
-    padding-top: 228px;
+    padding-top: 163px;
   }
   .header__info--concert_info {
     width: 1110px;
@@ -1302,24 +1352,24 @@ header {
     top: 72px;
   }
   .header__search_box__popup--sec {
-    width: 520px;
+    width: 650px;
     top: 46px;
-    left: -95px;
+    left: -307px;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
-    width: 50%;
-    margin: 0 15px 0 0;
+    width: 435px;
   }
-  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info__text {
+  .header__search_box__popup__wrapper__info_box__concerts_box__inner__info > a > p {
     text-align: left;
   }
-  .header__search_box__popup__wrapper__info_box__concerts_box__inner__price {
-    margin-right: 15px;
-    font-size: 15px;
+  .header__search_box__popup__wrapper--sec > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 280px;
   }
   .concerts_full_info {
     width: 1110px;
