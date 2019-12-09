@@ -105,6 +105,7 @@ $(document).ready(function(e) {
 		}
 		if (!$(e.target).closest('.header__menu__list__item--search').length) {
 			$('.header__search_box__popup--sec').css('display', 'none');
+			$('.header__search_box__popup--sec_theatres').css('display', 'none');
 			$('.header__menu__list__item__text--search').val('');
 		}
 		if (!$(e.target).closest('.header__menu__list__item__inner__img').length) {
@@ -317,6 +318,7 @@ $(document).ready(function(e) {
 				$('.header__search_box__popup--mob').css('display', 'block');
 			} else {
 				$('.header__search_box__popup--sec').css('display', 'block');
+				$('.header__search_box__popup--sec_theatres').css('display', 'block');
 			}
 			for(var i = 0; i < dataConcerts.length; i++) {
 				if ((((dataConcerts[i].activity_name.indexOf($('.header__search_box__input__inner__text').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__search_box__input__inner__text').val()) != -1)) && $('.header__search_box__input__inner__text').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search').val()) != -1)) && $('.header__menu__list__item__text--search').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--theatres_search').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--theatres_search').val()) != -1)) && $('.header__menu__list__item__text--theatres_search').val()) || (((dataConcerts[i].activity_name.indexOf($('.header__menu__list__item__text--search_popup').val()) != -1) || (dataConcerts[i].activity_name.toLowerCase().indexOf($('.header__menu__list__item__text--search_popup').val()) != -1)) && $('.header__menu__list__item__text--search_popup').val())) {

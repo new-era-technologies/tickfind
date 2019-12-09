@@ -222,12 +222,10 @@ header {
   outline: none;
   background: transparent;
 }
-.header__menu__list__item__text--search {
-  width: 158px;
-  display: none;
-}
+.header__menu__list__item__text--search,
 .header__menu__list__item__text--theatres_search {
-  display: block;
+  width: 105px;
+  display: none;
 }
 .header__menu__list__item__text--search::placeholder,
 .header__menu__list__item__text--theatres_search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -317,6 +315,7 @@ header {
   padding-left: 13px;
 }
 .header__menu__list__item--loc {
+  width: 22px;
   position: relative;
   margin-left: 17px;
   display: flex;
@@ -1108,6 +1107,9 @@ header {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .header__menu__list__item__text--theatres_search {
+    display: block;
+  }
   .header__menu__list__item--loc {
     margin-left: 20px;
   }
@@ -1125,6 +1127,9 @@ header {
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .theatres {
     height: 231px;
+  }
+  .header__menu__list__item__text--theatres_search {
+    display: block;
   }
   .header__menu__list__item--loc {
     margin-left: 20px;
@@ -1159,10 +1164,11 @@ header {
   .header__search_box__popup {
     top: 72px;
   }
-  .header__search_box__popup--sec {
+  .header__search_box__popup--sec,
+  .header__search_box__popup--sec_theatres {
     width: 650px;
     top: 46px;
-    left: -325px;
+    left: -378px;
   }
   .concerts_full_info__inner:nth-child(2) {
     display: block;
@@ -1204,6 +1210,9 @@ header {
   }
   .header__menu__list__item__text--search {
     font-size: 13px;
+  }
+  .header__menu__list__item__text--theatres_search {
+    display: block;
   }
   .header__menu__list__item--loc {
     margin-left: 30px;
@@ -1251,10 +1260,11 @@ header {
   .header__search_box__popup {
     top: 72px;
   }
-  .header__search_box__popup--sec {
+  .header__search_box__popup--sec,
+  .header__search_box__popup--sec_theatres {
     width: 650px;
     top: 46px;
-    left: -307px;
+    left: -360px;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner {
     width: 100%;
@@ -1269,6 +1279,9 @@ header {
     text-align: left;
   }
   .header__search_box__popup__wrapper--sec > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 280px;
+  }
+  .header__search_box__popup__wrapper--sec_theatres > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
     width: 280px;
   }
   .concerts_full_info {
@@ -1309,6 +1322,9 @@ header {
   }
   .header__menu__list__item--search {
     margin-left: 20px;
+  }
+  .header__menu__list__item__text--theatres_search {
+    display: block;
   }
   .header__menu__list__item__city_name--loc {
     display: block;
@@ -1351,10 +1367,11 @@ header {
   .header__search_box__popup {
     top: 72px;
   }
-  .header__search_box__popup--sec {
+  .header__search_box__popup--sec,
+  .header__search_box__popup--sec_theatres {
     width: 650px;
     top: 46px;
-    left: -307px;
+    left: -350px;
   }
   .header__search_box__popup__wrapper__info_box__concerts_box__inner {
     width: 100%;
@@ -1369,6 +1386,9 @@ header {
     text-align: left;
   }
   .header__search_box__popup__wrapper--sec > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
+    width: 280px;
+  }
+  .header__search_box__popup__wrapper--sec_theatres > .header__search_box__popup__wrapper__info_box > .header__search_box__popup__wrapper__info_box__concerts > .header__search_box__popup__wrapper__info_box__concerts_box > .header__search_box__popup__wrapper__info_box__concerts_box__inner > .header__search_box__popup__wrapper__info_box__concerts_box__inner__info {
     width: 280px;
   }
   .concerts_full_info {
