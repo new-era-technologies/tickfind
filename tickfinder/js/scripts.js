@@ -227,6 +227,8 @@ $(document).ready(function(e) {
 			$('.header__menu_ext__link').css('color', '#6E7380');
 			$('.header__menu_ext__link__img--white').css('display', 'none');
 			$('.header__menu_ext__link__img--black').css('display', 'block');
+			$('.header__menu__list__item__text--search').css('color', 'black');
+			$('.header__menu__list__item__text--theatres_search').css('color', 'black');
 			$('.header__menu__list__item__city_name--loc').css('color', '#36373D');
 			$('.header__menu__list__item__lang--cur').css('color', '#36373D');
 			$('.header__menu__list__item__inner__link').css('color', '#07C4AE');
@@ -251,6 +253,7 @@ $(document).ready(function(e) {
 			$('.header__menu_ext__link').css('color', 'white');
 			$('.header__menu_ext__link__img--white').css('display', 'block');
 			$('.header__menu_ext__link__img--black').css('display', 'none');
+			$('.header__menu__list__item__text--theatres_search').css('color', 'white');
 			$('.header__menu__list__item__city_name--loc').css('color', 'white');
 			$('.header__menu__list__item__lang--cur').css('color', 'white');
 			$('.header__menu__list__item__inner__link').css('color', 'white');

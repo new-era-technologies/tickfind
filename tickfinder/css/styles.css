@@ -225,6 +225,7 @@ header {
 .header__menu__list__item__text--search,
 .header__menu__list__item__text--theatres_search {
   width: 105px;
+  color: white;
   display: none;
 }
 .header__menu__list__item__text--search::placeholder,
@@ -865,12 +866,24 @@ header {
 .header__search_box__popup,
 .header__popup__search {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: none;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 99999;
+}
+.header__search_box__popup--sec,
+.header__search_box__popup--sec_theatres {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.header__search_box__popup--sec::-webkit-scrollbar,
+.header__search_box__popup--sec_theatres::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
 }
 .header__search_box__popup--mob {
   top: 70px;
