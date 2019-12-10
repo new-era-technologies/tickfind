@@ -89,8 +89,9 @@ $(document).ready(function(e) {
 		if (!$(e.target).closest('.header__menu_ext__link--dots').length) {
 			$('.header__submenu_ext').css('display', 'none');
 		}
-		if (!$(e.target).closest('.header__menu__list__item__img--calend').length) {
+		if ((!$(e.target).closest('.header__menu__list__item__img--calend').length) && (!$(e.target).closest('#header-calendar').length)) {
 			$('.header__calendar__menu').css('display', 'none');
+			$('.header__calendar__menu__link:last-child').removeClass('calendar-link-hover');
 		}
 		if (!$(e.target).closest('.header__menu__list__item--loc').length) {
 			$('.header__location__menu').css('display', 'none');
@@ -112,6 +113,33 @@ $(document).ready(function(e) {
 			$('.header__enter_cab__menu').css('display', 'none');
 		}
 
+	});
+
+
+	/*calendar*/
+	$('#header-calendar').click(function(e) {
+		e.preventDefault();
+		$('.header__calendar__menu__link:last-child').addClass('calendar-link-hover');
+	});
+	var dates_array = _.pluck([{"alias":"09.12.2019","name":"09.12.2019","count":41,"uri":"/type/city/hday/09.12.2019/index.htm"},{"alias":"10.12.2019","name":"10.12.2019","count":53,"uri":"/type/city/hday/10.12.2019/index.htm"},{"uri":"/type/city/hday/11.12.2019/index.htm","count":70,"alias":"11.12.2019","name":"11.12.2019"},{"uri":"/type/city/hday/12.12.2019/index.htm","count":68,"name":"12.12.2019","alias":"12.12.2019"},{"alias":"13.12.2019","name":"13.12.2019","count":75,"uri":"/type/city/hday/13.12.2019/index.htm"},{"uri":"/type/city/hday/14.12.2019/index.htm","count":144,"name":"14.12.2019","alias":"14.12.2019"},{"alias":"21.12.2019","name":"21.12.2019","uri":"/type/city/hday/21.12.2019/index.htm","count":1},{"alias":"01.01.2020","name":"01.01.2020","count":1,"uri":"/type/city/hday/01.01.2020/index.htm"}], 'name');
+	$('#header-calendar').dateRangePicker({
+		language: 'ru',
+		autoClose: true,
+		singleDate : true,
+		showShortcuts: false,
+		showTopbar: false,
+		singleMonth: true,
+		startOfWeek: 'monday',
+		startDate: moment().format().substr(0, 10),
+		customArrowPrevSymbol: '<i class="cal_arr_prev"></i>',
+		customArrowNextSymbol: '<i class="cal_arr_next"></i>',
+		beforeShowDay: function(t) {
+			var myDate = moment(t).strftime("%d.%m.%Y");
+			var valid = _.find( dates_array, function(num){ return num == myDate; } );
+			var _class = '';
+			var _tooltip = valid ? '' : 'Нет событий';
+			return [valid,_class,_tooltip];
+		}
 	});
 
 	/*fetch cities*/

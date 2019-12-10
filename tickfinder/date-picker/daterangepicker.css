@@ -17,17 +17,12 @@
 .date-picker-wrapper {
   position: absolute;
   z-index: 1;
-  border: 1px solid #bfbfbf;
-  background-color: #efefef;
-  padding: 5px 12px;
   font-size: 12px;
   line-height: 20px;
   color: #aaa;
   font-family: Arial, sans-serif;
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   -webkit-box-sizing: initial;
-          box-sizing: initial;
+  box-sizing: initial;
 }
 
 .dp-clearfix {
@@ -39,20 +34,12 @@
 .date-picker-wrapper.inline-wrapper {
   position: relative;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   display: inline-block;
 }
 
 .date-picker-wrapper.single-date {
   width: auto;
-}
-
-.date-picker-wrapper.no-shortcuts {
-  padding-bottom: 12px;
-}
-
-.date-picker-wrapper.no-topbar {
-  padding-top: 12px;
 }
 
 .date-picker-wrapper .footer {
@@ -71,7 +58,7 @@
 }
 
 .date-picker-wrapper .month-name {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .date-picker-wrapper .select-wrapper {
@@ -88,6 +75,15 @@
 .date-picker-wrapper .month-element {
   display: inline-block;
   vertical-align: middle;
+}
+.month-element {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #B7B7B7;
+}
+.month-element:first-child {
+  margin-right: 5px;
+  color: #36373D;
 }
 
 .date-picker-wrapper .select-wrapper select {
@@ -114,10 +110,10 @@
 }
 
 .date-picker-wrapper .month-wrapper {
-  border: 1px solid #bfbfbf;
-  border-radius: 3px;
+  border: 1px solid #EFF2F4;
+  border-radius: 4px;
   background-color: #fff;
-  padding: 5px;
+  padding: 10px 15px 15px 15px;
   cursor: default;
   position: relative;
   _overflow: hidden;
@@ -136,17 +132,16 @@
 .date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td {
   vertical-align: middle;
   text-align: center;
-  line-height: 14px;
   margin: 0px;
   padding: 0px;
 }
 
 .date-picker-wrapper .month-wrapper table .day {
-  padding: 5px 0;
-  line-height: 1;
-  font-size: 12px;
-  margin-bottom: 1px;
-  color: #ccc;
+  padding: 2px 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #36373D;
+  border: 1px solid transparent;
   cursor: default;
 }
 
@@ -160,10 +155,20 @@
 }
 
 .date-picker-wrapper .month-wrapper table .week-name {
-  height: 20px;
-  line-height: 20px;
-  font-weight: 100;
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.week-name > th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #B7B7B7;
+}
+
+.week-name > th:nth-child(6),
+.week-name > th:nth-child(7),
+.month1 > tbody > tr > td:nth-child(6) > .day,
+.month1 > tbody > tr > td:nth-child(7) > .day {
+  color: #FF8383;
 }
 
 .date-picker-wrapper .month-wrapper table .day.has-tooltip {
@@ -178,13 +183,18 @@
   white-space: nowrap;
 }
 
+.date-picker-wrapper .month-wrapper table .day.toMonth.invalid {
+  color: #B7B7B7;
+}
+
 .date-picker-wrapper .month-wrapper table .day.toMonth.valid {
-  color: #333;
   cursor: pointer;
 }
 
 .date-picker-wrapper .month-wrapper table .day.toMonth.hovering {
-  background-color: #cdecfa;
+  background: #FFFFFF;
+  border: 1px solid #07C4AE;
+  border-radius: 5px;
 }
 
 .date-picker-wrapper .month-wrapper table .day.nextMonth, .date-picker-wrapper .month-wrapper table .day.lastMonth {
@@ -192,7 +202,9 @@
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today {
-  background-color: #ffe684;
+  background: #07C4AE;
+  color: #FFFFFF;
+  border-radius: 5px;
 }
 
 .date-picker-wrapper .month-wrapper table .day.real-today.checked, .date-picker-wrapper .month-wrapper table .day.real-today.hovering {
@@ -200,21 +212,33 @@
 }
 
 .date-picker-wrapper table .caption {
-  height: 40px;
+  height: 50px;
 }
 
 .date-picker-wrapper table .caption > th:first-of-type, .date-picker-wrapper table .caption > th:last-of-type {
   width: 27px;
 }
 
-.date-picker-wrapper table .caption .next, .date-picker-wrapper table .caption .prev {
-  padding: 0 5px;
+.cal_arr_prev,
+.cal_arr_next {
+  width: 8px;
+  height: 16px;
+  margin-left: 20px;
+  background: url(../img/arr_r_cal.svg) no-repeat;
+  background-size: 8px 16px;
+  display: block;
   cursor: pointer;
+}
+.cal_arr_prev {
+  margin-left: 0;
+  margin-right: 20px;
+  background: url(../img/arr_l_cal.svg) no-repeat;
+  background-size: 8px 16px;
 }
 
 .date-picker-wrapper table .caption .next:hover, .date-picker-wrapper table .caption .prev:hover {
-  background-color: #ccc;
-  color: white;
+  /*background-color: #ccc;
+  color: white;*/
 }
 
 .date-picker-wrapper .gap {
@@ -416,7 +440,7 @@
   margin-top: -4px;
   margin-left: -8px;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   display: none;
   background-color: yellow;
   padding: 0 6px;
